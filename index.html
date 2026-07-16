@@ -76,10 +76,10 @@
     .hero {
       min-height: calc(100vh - 76px);
       display: grid;
-      grid-template-columns: 1.18fr .82fr;
+      grid-template-columns: 1.08fr .92fr;
       align-items: center;
-      gap: 70px;
-      padding: 90px 0 80px;
+      gap: 54px;
+      padding: 64px 0 58px;
       overflow: hidden;
     }
 
@@ -103,23 +103,29 @@
     }
 
     h1 {
-      max-width: 880px;
+      max-width: 760px;
       margin: 0;
-      font-size: clamp(2.8rem, 5.4vw, 5.4rem);
+      font-size: clamp(2.55rem, 4.25vw, 4.35rem);
       line-height: .9;
       letter-spacing: -.07em;
       text-transform: uppercase;
     }
 
+    h1 span,
+    h1 em {
+      display: block;
+    }
+
     h1 em {
       color: var(--accent);
       font-style: normal;
+      margin-top: .08em;
     }
 
     .lead {
       max-width: 700px;
       color: #c9c9c3;
-      margin: 30px 0 34px;
+      margin: 24px 0 28px;
       font-size: clamp(1rem, 1.35vw, 1.18rem);
     }
 
@@ -155,7 +161,7 @@
 
     .visual {
       position: relative;
-      min-height: 470px;
+      min-height: 410px;
       display: grid;
       place-items: center;
     }
@@ -468,8 +474,8 @@
     @media (max-width: 560px) {
       .container { width: min(calc(100% - 28px), var(--max)); }
       .status { display: none; }
-      h1 { font-size: clamp(2.45rem, 12vw, 3.8rem); }
-      .hero { min-height: auto; padding-bottom: 55px; }
+      h1 { font-size: clamp(2.25rem, 10.5vw, 3.35rem); }
+      .hero { min-height: auto; padding: 52px 0 48px; }
       section { padding: 72px 0; }
       .visual { min-height: 310px; }
       .tabs-stack { width: 90%; }
@@ -493,7 +499,7 @@
     <div class="container hero">
       <div>
         <div class="eyebrow">Chiclete funcional · Cafeína + L-teanina</div>
-        <h1>Energia para continuar. <em>Clareza para decidir.</em></h1>
+        <h1><span>Energia para continuar.</span><em>Clareza para decidir.</em></h1>
         <p class="lead">TABS é um chiclete funcional em desenvolvimento que combina cafeína e L-teanina para dar energia com clareza mental em momentos de pressão e cansaço. Prático, portátil e pensado para ser usado sem interromper a tarefa.</p>
         <div class="actions">
           <a class="button" href="#lista">Quero testar o TABS</a>
