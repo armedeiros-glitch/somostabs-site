@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Somos TABS. Um chiclete funcional em desenvolvimento para quem vive com várias abas abertas na mente." />
+  <meta name="description" content="Somos TABS. Chiclete funcional com cafeína e L-teanina em desenvolvimento para quem vive com várias abas abertas na mente." />
   <meta name="theme-color" content="#090909" />
   <title>Somos TABS | Foco sem interromper o fluxo</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23090909'/%3E%3Cpath d='M10 12h44v10H37v30H27V22H10z' fill='%23dfff38'/%3E%3C/svg%3E">
@@ -310,6 +310,39 @@
     input:focus, select:focus { border-color: var(--accent); }
     select { appearance: none; }
 
+    .consent {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 12px;
+      align-items: start;
+      margin: 4px 0 22px;
+      color: var(--muted);
+      font-size: .84rem;
+      line-height: 1.45;
+    }
+
+    .consent input {
+      width: 18px;
+      height: 18px;
+      margin: 2px 0 0;
+      accent-color: var(--accent);
+    }
+
+    .consent label {
+      margin: 0;
+      color: inherit;
+      font-size: inherit;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .button:disabled {
+      opacity: .65;
+      cursor: wait;
+      transform: none;
+    }
+
     .form-note {
       display: none;
       margin-top: 16px;
@@ -361,7 +394,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Somos TABS">SOMOS <span>TABS.</span></a>
-      <div class="status">Projeto em desenvolvimento · Programa Nascer 2026</div>
+      <div class="status">Projeto selecionado para o Programa Nascer 2026</div>
     </div>
   </header>
 
@@ -370,7 +403,7 @@
       <div>
         <div class="eyebrow">Para mentes aceleradas</div>
         <h1>Foco sem interromper o <em>fluxo.</em></h1>
-        <p class="lead">Estamos desenvolvendo um chiclete funcional com cafeína e L-teanina para quem vive com várias abas abertas na mente e precisa de praticidade para seguir o ritmo.</p>
+        <p class="lead">Estamos desenvolvendo um chiclete funcional com cafeína e L-teanina. A formulação e as dosagens ainda estão em desenvolvimento e serão validadas antes do lançamento. A proposta é criar uma opção prática para quem vive com várias abas abertas na mente.</p>
         <div class="actions">
           <a class="button" href="#lista">Quero testar primeiro</a>
           <span class="microcopy">Ainda não está à venda.</span>
@@ -455,6 +488,7 @@
               <option>Estudo</option>
               <option>Treino</option>
               <option>Direção ou viagem</option>
+              <option>Games e e-sports competitivos</option>
               <option>Projetos pessoais</option>
               <option>Rotina corrida</option>
             </select>
@@ -472,8 +506,15 @@
             </select>
           </div>
 
-          <button class="button" type="submit">Entrar na lista</button>
-          <div class="form-note" id="form-note" role="status">A página está pronta. Agora falta apenas conectar o formulário ao destino dos cadastros antes de divulgar.</div>
+          <input type="hidden" name="source" value="somostabs.com.br" />
+
+          <div class="consent">
+            <input id="consent" name="consent" type="checkbox" value="Sim" required />
+            <label for="consent">Autorizo a Somos TABS a entrar em contato pelo WhatsApp sobre testes, validação e lançamento do produto.</label>
+          </div>
+
+          <button class="button" id="submit-button" type="submit">Entrar na lista</button>
+          <div class="form-note" id="form-note" role="status" aria-live="polite"></div>
         </form>
       </div>
     </section>
@@ -487,13 +528,42 @@
   </footer>
 
   <script>
+    const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxY7n1QqI2tRubu28Z0rP1N9lvfyB0fvK9EkJbP8JlL_UNYO5sPHRbKwUErulPayVh5Ww/exec';
     const form = document.querySelector('#interest-form');
     const note = document.querySelector('#form-note');
+    const submitButton = document.querySelector('#submit-button');
 
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      note.style.display = 'block';
-      note.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const originalText = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = 'Enviando...';
+      note.style.display = 'none';
+
+      try {
+        await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: new FormData(form)
+        });
+
+        form.reset();
+        note.textContent = 'Cadastro recebido. Quando o primeiro lote estiver mais perto, a gente entra em contato.';
+        note.style.display = 'block';
+        note.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } catch (error) {
+        note.textContent = 'Não conseguimos enviar agora. Tente novamente em alguns instantes.';
+        note.style.display = 'block';
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+      }
     });
   </script>
 </body>
