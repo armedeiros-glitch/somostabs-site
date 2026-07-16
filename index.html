@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Somos TABS. Chiclete funcional com cafeína e L‑teanina em desenvolvimento para quem vive com várias abas abertas na mente." />
+  <meta name="description" content="TABS é um chiclete funcional em desenvolvimento que combina cafeína e L-teanina para dar energia com clareza mental em momentos de pressão e cansaço." />
   <meta name="theme-color" content="#090909" />
-  <title>Somos TABS | Foco sem interromper o fluxo</title>
+  <title>Somos TABS | Energia para continuar. Clareza para decidir.</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23090909'/%3E%3Cpath d='M10 12h44v10H37v30H27V22H10z' fill='%23dfff38'/%3E%3C/svg%3E">
   <style>
     :root {
       --bg: #090909;
       --surface: #111111;
+      --surface-2: #151515;
       --line: #2a2a2a;
       --text: #f5f5ef;
       --muted: #a7a7a0;
@@ -75,7 +76,7 @@
     .hero {
       min-height: calc(100vh - 76px);
       display: grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns: 1.18fr .82fr;
       align-items: center;
       gap: 70px;
       padding: 90px 0 80px;
@@ -102,11 +103,11 @@
     }
 
     h1 {
-      max-width: 850px;
+      max-width: 880px;
       margin: 0;
-      font-size: clamp(3.7rem, 8vw, 7.8rem);
-      line-height: .88;
-      letter-spacing: -.075em;
+      font-size: clamp(3.5rem, 7.2vw, 7rem);
+      line-height: .9;
+      letter-spacing: -.07em;
       text-transform: uppercase;
     }
 
@@ -116,10 +117,10 @@
     }
 
     .lead {
-      max-width: 670px;
+      max-width: 700px;
       color: #c9c9c3;
       margin: 30px 0 34px;
-      font-size: clamp(1.05rem, 1.7vw, 1.32rem);
+      font-size: clamp(1.05rem, 1.7vw, 1.3rem);
     }
 
     .actions {
@@ -185,16 +186,17 @@
       gap: 18px;
       padding: 0 22px;
       border: 1px solid rgba(255,255,255,.18);
-      background: rgba(17,17,17,.86);
+      background: rgba(17,17,17,.88);
       box-shadow: 0 20px 70px rgba(0,0,0,.35);
     }
 
-    .tab:nth-child(2) { transform: translateX(22px); }
-    .tab:nth-child(3) { transform: translateX(-10px); border-color: var(--accent); }
+    .tab:nth-child(2) { transform: translateX(22px); border-color: var(--accent); }
+    .tab:nth-child(3) { transform: translateX(-10px); }
     .tab:nth-child(4) { transform: translateX(30px); }
 
     .tab strong { font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; }
     .tab small { color: var(--muted); }
+
     .dot {
       width: 9px;
       height: 9px;
@@ -207,7 +209,7 @@
 
     .section-head {
       display: grid;
-      grid-template-columns: .75fr 1.25fr;
+      grid-template-columns: .7fr 1.3fr;
       gap: 50px;
       margin-bottom: 58px;
     }
@@ -228,22 +230,107 @@
       text-transform: uppercase;
     }
 
-    .principles { border-top: 1px solid var(--line); }
-
-    .principle {
+    .benefit-grid {
       display: grid;
-      grid-template-columns: 100px 1fr 1fr;
-      gap: 30px;
-      align-items: center;
-      min-height: 130px;
-      border-bottom: 1px solid var(--line);
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
     }
 
-    .number { color: var(--accent); font-weight: 900; font-size: .8rem; }
-    .principle h3 { margin: 0; font-size: 1.5rem; text-transform: uppercase; letter-spacing: -.02em; }
-    .principle p { margin: 0; color: var(--muted); max-width: 520px; }
+    .benefit {
+      min-height: 255px;
+      padding: 32px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(17,17,17,.42);
+    }
 
-    .validation { background: var(--surface); }
+    .benefit-number {
+      display: block;
+      color: var(--accent);
+      margin-bottom: 55px;
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+
+    .benefit h3 {
+      margin: 0 0 13px;
+      font-size: 1.55rem;
+      text-transform: uppercase;
+      letter-spacing: -.03em;
+    }
+
+    .benefit p { margin: 0; color: var(--muted); }
+
+    .comparison { background: var(--surface); }
+
+    .comparison-intro {
+      max-width: 760px;
+      margin: -25px 0 42px auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid #363636;
+      background: #0c0c0c;
+    }
+
+    table {
+      width: 100%;
+      min-width: 790px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 20px 18px;
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    th:first-child, td:first-child { text-align: left; }
+
+    th {
+      color: #d7d7d0;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      background: #131313;
+    }
+
+    td { color: #b9b9b2; }
+    tbody tr:last-child td { border-bottom: 0; }
+
+    .tabs-row td {
+      color: var(--text);
+      font-weight: 850;
+      background: rgba(223,255,56,.07);
+      border-top: 1px solid var(--accent);
+      border-bottom: 1px solid var(--accent);
+    }
+
+    .tabs-row td:first-child { color: var(--accent); }
+
+    .yes { color: var(--accent); font-weight: 850; }
+    .limited { color: #c4c4bd; }
+    .no { color: #777771; }
+
+    .argument {
+      margin: 36px 0 0;
+      padding: 28px 30px;
+      border-left: 4px solid var(--accent);
+      background: rgba(223,255,56,.055);
+      font-size: clamp(1.15rem, 2vw, 1.55rem);
+      font-weight: 750;
+      letter-spacing: -.02em;
+    }
+
+    .argument span { color: var(--accent); }
+
+    .validation { background: var(--bg); }
 
     .validation-grid {
       display: grid;
@@ -303,7 +390,7 @@
       border-radius: 0;
       outline: none;
       color: var(--text);
-      background: #151515;
+      background: var(--surface-2);
       padding: 0 14px;
     }
 
@@ -372,21 +459,25 @@
       .hero { padding-top: 70px; gap: 10px; }
       .visual { min-height: 360px; }
       .wordmark { transform: none; }
-      .principle { grid-template-columns: 55px 1fr; padding: 24px 0; }
-      .principle p { grid-column: 2; }
+      .benefit-grid { grid-template-columns: 1fr; }
+      .benefit { min-height: auto; }
+      .benefit-number { margin-bottom: 32px; }
+      .comparison-intro { margin: -25px 0 38px; }
     }
 
     @media (max-width: 560px) {
       .container { width: min(calc(100% - 28px), var(--max)); }
       .status { display: none; }
-      h1 { font-size: clamp(3.2rem, 17vw, 5rem); }
+      h1 { font-size: clamp(3rem, 15vw, 4.7rem); }
       .hero { min-height: auto; padding-bottom: 55px; }
       section { padding: 72px 0; }
       .visual { min-height: 310px; }
       .tabs-stack { width: 90%; }
       .tab { min-height: 62px; }
+      .benefit { padding: 26px 22px; }
       form { padding: 24px 18px; }
-      .principle { grid-template-columns: 38px 1fr; gap: 14px; }
+      th, td { padding: 16px 14px; }
+      .argument { padding: 22px; }
     }
   </style>
 </head>
@@ -401,11 +492,11 @@
   <main id="top">
     <div class="container hero">
       <div>
-        <div class="eyebrow">Para mentes aceleradas</div>
-        <h1>Foco sem interromper o <em>fluxo.</em></h1>
-        <p class="lead">Estamos desenvolvendo um chiclete funcional com cafeína e L‑teanina. A formulação e as dosagens ainda estão em desenvolvimento e serão validadas antes do lançamento. A proposta é criar uma opção prática para quem vive com várias abas abertas na mente.</p>
+        <div class="eyebrow">Chiclete funcional · Cafeína + L-teanina</div>
+        <h1>Energia para continuar. <em>Clareza para decidir.</em></h1>
+        <p class="lead">TABS é um chiclete funcional em desenvolvimento que combina cafeína e L-teanina para dar energia com clareza mental em momentos de pressão e cansaço. Prático, portátil e pensado para ser usado sem interromper a tarefa.</p>
         <div class="actions">
-          <a class="button" href="#lista">Quero testar primeiro</a>
+          <a class="button" href="#lista">Quero testar o TABS</a>
           <span class="microcopy">Ainda não está à venda.</span>
         </div>
       </div>
@@ -413,10 +504,10 @@
       <div class="visual" aria-hidden="true">
         <div class="wordmark">TABS</div>
         <div class="tabs-stack">
-          <div class="tab"><strong>Trabalho</strong><span class="dot"></span></div>
-          <div class="tab"><strong>Estudo</strong><small>aba 02</small></div>
-          <div class="tab"><strong>Projeto pessoal</strong><span class="dot"></span></div>
-          <div class="tab"><strong>Vida adulta</strong><small>carregando...</small></div>
+          <div class="tab"><strong>Energia</strong><span class="dot"></span></div>
+          <div class="tab"><strong>Clareza mental</strong><small>em foco</small></div>
+          <div class="tab"><strong>Praticidade</strong><span class="dot"></span></div>
+          <div class="tab"><strong>Durante a tarefa</strong><small>sem interromper</small></div>
         </div>
       </div>
     </div>
@@ -424,27 +515,91 @@
     <section>
       <div class="container">
         <div class="section-head">
-          <div class="kicker">A ideia</div>
-          <h2>Menos ritual.<br />Mais movimento.</h2>
+          <div class="kicker">A proposta</div>
+          <h2>Não é só ficar acordado.<br />É continuar pensando bem.</h2>
         </div>
 
-        <div class="principles">
-          <article class="principle">
-            <div class="number">01</div>
-            <h3>Portátil</h3>
-            <p>Uma proposta pensada para acompanhar bolso, mochila, mesa de trabalho e rotina real.</p>
+        <div class="benefit-grid">
+          <article class="benefit">
+            <span class="benefit-number">01</span>
+            <h3>Energia</h3>
+            <p>Cafeína para os momentos em que o ritmo precisa continuar, mesmo sob pressão ou cansaço.</p>
           </article>
-          <article class="principle">
-            <div class="number">02</div>
-            <h3>Discreto</h3>
-            <p>Sem lata, sem preparo e sem transformar um momento de foco em uma pequena cerimônia.</p>
+          <article class="benefit">
+            <span class="benefit-number">02</span>
+            <h3>Clareza mental</h3>
+            <p>L-teanina como parte da combinação pensada para manter o foco sem transformar energia em agitação.</p>
           </article>
-          <article class="principle">
-            <div class="number">03</div>
-            <h3>Construído com o público</h3>
-            <p>Fórmula, sabor, embalagem e preço serão testados com pessoas que realmente se veem usando o produto.</p>
+          <article class="benefit">
+            <span class="benefit-number">03</span>
+            <h3>Praticidade</h3>
+            <p>Um formato portátil, discreto e mastigável para acompanhar trabalho, estudo, jogos, viagens e projetos.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="comparison">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">O diferencial</div>
+          <h2>Energia e clareza sem interromper a tarefa.</h2>
+        </div>
+
+        <p class="comparison-intro">Outras soluções resolvem partes do problema. A proposta do TABS é reunir energia, a combinação de cafeína com L-teanina e a praticidade de um chiclete em uma única experiência.</p>
+
+        <div class="table-wrap" role="region" aria-label="Comparação entre TABS e outras soluções" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th>Solução</th>
+                <th>Energia</th>
+                <th>Cafeína + L-teanina</th>
+                <th>Praticidade</th>
+                <th>Uso durante a tarefa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Café</td>
+                <td class="yes">Sim</td>
+                <td class="no">Não</td>
+                <td class="limited">Média</td>
+                <td class="limited">Baixa</td>
+              </tr>
+              <tr>
+                <td>Energético</td>
+                <td class="yes">Sim</td>
+                <td class="limited">Geralmente não</td>
+                <td class="limited">Média</td>
+                <td class="limited">Média</td>
+              </tr>
+              <tr>
+                <td>Cápsula de cafeína</td>
+                <td class="yes">Sim</td>
+                <td class="limited">Geralmente não</td>
+                <td class="yes">Alta</td>
+                <td class="limited">Baixa</td>
+              </tr>
+              <tr>
+                <td>Chiclete comum</td>
+                <td class="no">Não</td>
+                <td class="no">Não</td>
+                <td class="yes">Alta</td>
+                <td class="yes">Alta</td>
+              </tr>
+              <tr class="tabs-row">
+                <td>TABS</td>
+                <td>Sim</td>
+                <td>Sim</td>
+                <td>Alta</td>
+                <td>Alta</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="argument">O TABS une <span>a energia da cafeína</span>, a presença da L-teanina e a praticidade de um chiclete.</p>
       </div>
     </section>
 
@@ -452,7 +607,7 @@
       <div class="container validation-grid">
         <div class="validation-copy">
           <div class="kicker">Primeiro lote</div>
-          <h2>Você usaria?</h2>
+          <h2>Você usaria o TABS?</h2>
           <p>Estamos formando uma lista de pessoas interessadas em participar dos testes e conhecer o primeiro lote quando ele estiver pronto.</p>
           <ul class="checks">
             <li>Participar da validação do conceito</li>
@@ -541,7 +696,7 @@
   <footer>
     <div class="container footer-row">
       <span>© 2026 Somos TABS.</span>
-      <span>Produto e formulação em desenvolvimento. As informações desta página não constituem orientação de saúde.</span>
+      <span>Produto, formulação e dosagens em desenvolvimento. As informações desta página não constituem orientação de saúde.</span>
     </div>
   </footer>
 
