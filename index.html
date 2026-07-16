@@ -481,6 +481,19 @@
           </div>
 
           <div class="field">
+            <label for="profile">Qual perfil mais combina com você?</label>
+            <select id="profile" name="profile" required>
+              <option value="" selected disabled>Selecione</option>
+              <option>Profissional ou empreendedor</option>
+              <option>Universitário</option>
+              <option>Gamer ou jogador de e-sports</option>
+              <option>Motorista ou viajante frequente</option>
+              <option>Praticante de atividade física</option>
+              <option>Outro</option>
+            </select>
+          </div>
+
+          <div class="field">
             <label for="moment">Em qual momento você mais usaria?</label>
             <select id="moment" name="moment" required>
               <option value="" selected disabled>Selecione</option>
@@ -506,7 +519,12 @@
             </select>
           </div>
 
-          <input type="hidden" name="source" value="somostabs.com.br" />
+          <input id="source" type="hidden" name="source" value="direto" />
+
+          <div class="consent">
+            <input id="adult" name="adult" type="checkbox" value="Sim" required />
+            <label for="adult">Confirmo que tenho 18 anos ou mais.</label>
+          </div>
 
           <div class="consent">
             <input id="consent" name="consent" type="checkbox" value="Sim" required />
@@ -532,6 +550,16 @@
     const form = document.querySelector('#interest-form');
     const note = document.querySelector('#form-note');
     const submitButton = document.querySelector('#submit-button');
+    const sourceInput = document.querySelector('#source');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const origem = (urlParams.get('origem') || 'direto')
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9_-]/g, '')
+      .slice(0, 60);
+
+    sourceInput.value = origem || 'direto';
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -554,6 +582,7 @@
         });
 
         form.reset();
+        sourceInput.value = origem || 'direto';
         note.textContent = 'Cadastro recebido. Quando o primeiro lote estiver mais perto, a gente entra em contato.';
         note.style.display = 'block';
         note.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
