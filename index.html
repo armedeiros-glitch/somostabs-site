@@ -269,6 +269,63 @@
 
     .benefit p { margin: 0; color: var(--muted); }
 
+    .audience {
+      background: var(--bg);
+    }
+
+    .audience-intro {
+      max-width: 780px;
+      margin: -24px 0 42px auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .audience-card {
+      min-height: 230px;
+      padding: 30px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(17,17,17,.42);
+    }
+
+    .audience-card strong {
+      display: block;
+      margin-bottom: 38px;
+      color: var(--accent);
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .audience-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.38rem;
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      text-transform: uppercase;
+    }
+
+    .audience-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .audience-note {
+      margin: 26px 0 0;
+      padding-left: 16px;
+      border-left: 3px solid var(--accent);
+      color: #8f8f88;
+      font-size: .84rem;
+    }
+
     .comparison { background: var(--surface); }
 
     .comparison-intro {
@@ -465,10 +522,11 @@
       .hero { padding-top: 70px; gap: 10px; }
       .visual { min-height: 360px; }
       .wordmark { transform: none; }
-      .benefit-grid { grid-template-columns: 1fr; }
-      .benefit { min-height: auto; }
+      .benefit-grid, .audience-grid { grid-template-columns: 1fr; }
+      .benefit, .audience-card { min-height: auto; }
       .benefit-number { margin-bottom: 32px; }
-      .comparison-intro { margin: -25px 0 38px; }
+      .audience-card strong { margin-bottom: 28px; }
+      .audience-intro, .comparison-intro { margin: -25px 0 38px; }
     }
 
     @media (max-width: 560px) {
@@ -542,6 +600,57 @@
             <p>Um formato portátil, discreto e mastigável para acompanhar trabalho, estudo, jogos, viagens e projetos.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="audience">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Para quem é</div>
+          <h2>Para adultos que precisam continuar sem perder a clareza.</h2>
+        </div>
+
+        <p class="audience-intro">TABS não foi pensado para um único nicho. É para momentos em que o cansaço aparece, a pressão aumenta e ainda existe algo importante para fazer.</p>
+
+        <div class="audience-grid">
+          <article class="audience-card">
+            <strong>01 · Trabalho</strong>
+            <h3>Profissionais e empreendedores</h3>
+            <p>Para reuniões, prazos, decisões e períodos de trabalho que exigem energia com clareza mental.</p>
+          </article>
+
+          <article class="audience-card">
+            <strong>02 · Estudo</strong>
+            <h3>Universitários</h3>
+            <p>Para provas, trabalhos e sessões de estudo em que manter a concentração faz diferença.</p>
+          </article>
+
+          <article class="audience-card">
+            <strong>03 · Games</strong>
+            <h3>Gamers e e-sports</h3>
+            <p>Para treinos, partidas e campeonatos em que atenção e tomada de decisão importam.</p>
+          </article>
+
+          <article class="audience-card">
+            <strong>04 · Criação</strong>
+            <h3>Criadores e projetos pessoais</h3>
+            <p>Para escrever, editar, planejar e tirar uma ideia do papel mesmo quando o cansaço chega.</p>
+          </article>
+
+          <article class="audience-card">
+            <strong>05 · Deslocamento</strong>
+            <h3>Motoristas e viajantes</h3>
+            <p>Para pausas e trajetos longos, quando praticidade e portabilidade fazem diferença.</p>
+          </article>
+
+          <article class="audience-card">
+            <strong>06 · Rotina ativa</strong>
+            <h3>Quem concilia trabalho, estudo e treino</h3>
+            <p>Para quem atravessa diferentes tarefas no mesmo dia e busca uma opção prática entre uma e outra.</p>
+          </article>
+        </div>
+
+        <p class="audience-note">Pesquisa e produto direcionados exclusivamente a pessoas com 18 anos ou mais.</p>
       </div>
     </section>
 
