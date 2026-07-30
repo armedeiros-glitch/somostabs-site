@@ -3,16 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="TABS é um chiclete funcional brasileiro em desenvolvimento para momentos de foco, energia e performance." />
+  <meta name="description" content="TABS é um chiclete funcional brasileiro em desenvolvimento para os momentos em que é hora de entrar no modo performance." />
   <meta name="theme-color" content="#090909" />
-  <title>Somos TABS | Seu momento de performance</title>
-
+  <title>TABS | Tá na hora.</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23090909'/%3E%3Cpath d='M10 12h44v10H37v30H27V22H10z' fill='%23dfff38'/%3E%3C/svg%3E">
-
   <style>
     :root {
       --bg: #090909;
-      --surface: #111111;
+      --surface: #111;
       --surface-2: #171717;
       --line: #2b2b2b;
       --text: #f5f5ef;
@@ -23,12 +21,11 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
       color: var(--text);
       background:
-        radial-gradient(circle at 82% 10%, rgba(223,255,56,.12), transparent 25rem),
+        radial-gradient(circle at 78% 8%, rgba(223,255,56,.12), transparent 26rem),
         var(--bg);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.5;
@@ -56,32 +53,20 @@
       gap: 20px;
     }
 
-    .brand {
-      font-size: 1.2rem;
-      font-weight: 950;
-      letter-spacing: -.045em;
-    }
-
+    .brand { font-size: 1.2rem; font-weight: 950; letter-spacing: -.045em; }
     .brand span { color: var(--accent); }
-
-    .status {
-      color: var(--muted);
-      font-size: .72rem;
-      text-transform: uppercase;
-      letter-spacing: .14em;
-    }
+    .status { color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; }
 
     .hero {
       min-height: calc(100vh - 72px);
       display: grid;
-      grid-template-columns: 1.12fr .88fr;
+      grid-template-columns: 1.08fr .92fr;
       align-items: center;
       gap: 54px;
       padding: 72px 0 64px;
     }
 
-    .eyebrow,
-    .kicker {
+    .eyebrow, .kicker {
       color: var(--accent);
       font-size: .76rem;
       font-weight: 850;
@@ -89,52 +74,29 @@
       text-transform: uppercase;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 22px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 38px;
-      height: 2px;
-      background: var(--accent);
-    }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px; }
+    .eyebrow::before { content: ""; width: 38px; height: 2px; background: var(--accent); }
 
     h1 {
       max-width: 760px;
       margin: 0;
-      font-size: clamp(3.1rem, 6.4vw, 6.8rem);
-      line-height: .84;
-      letter-spacing: -.075em;
+      font-size: clamp(4rem, 8.8vw, 8rem);
+      line-height: .8;
+      letter-spacing: -.08em;
       text-transform: uppercase;
     }
 
-    h1 span,
-    h1 em { display: block; }
-
-    h1 em {
-      color: var(--accent);
-      font-style: normal;
-      margin-top: .08em;
-    }
+    h1 span, h1 em { display: block; }
+    h1 em { color: var(--accent); font-style: normal; margin-top: .12em; }
 
     .lead {
-      max-width: 680px;
-      margin: 26px 0 30px;
+      max-width: 650px;
+      margin: 28px 0 30px;
       color: #c9c9c3;
       font-size: clamp(1rem, 1.45vw, 1.22rem);
     }
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 18px;
-    }
-
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
     .button {
       min-height: 56px;
       display: inline-flex;
@@ -150,19 +112,11 @@
       cursor: pointer;
       transition: transform .2s ease, background .2s ease;
     }
-
     .button:hover { transform: translateY(-2px); background: #edff8a; }
     .button:disabled { opacity: .62; cursor: wait; transform: none; }
-
     .microcopy { color: #777771; font-size: .82rem; }
 
-    .hero-visual {
-      position: relative;
-      min-height: 440px;
-      display: grid;
-      place-items: center;
-    }
-
+    .hero-visual { position: relative; min-height: 460px; display: grid; place-items: center; }
     .ghost-word {
       position: absolute;
       font-size: clamp(9rem, 21vw, 17rem);
@@ -174,312 +128,94 @@
       user-select: none;
     }
 
-    .moment-stack {
-      width: min(100%, 420px);
-      display: grid;
-      gap: 13px;
-      transform: rotate(-3deg);
-    }
-
-    .moment-tab {
-      min-height: 78px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      padding: 0 22px;
+    .trigger-card {
+      position: relative;
+      width: min(100%, 430px);
+      padding: 38px;
       border: 1px solid rgba(255,255,255,.18);
-      background: rgba(17,17,17,.93);
-      box-shadow: 0 22px 70px rgba(0,0,0,.38);
+      background: rgba(17,17,17,.94);
+      box-shadow: 0 30px 90px rgba(0,0,0,.52);
+      transform: rotate(-2deg);
+      overflow: hidden;
     }
-
-    .moment-tab:nth-child(2) { transform: translateX(24px); border-color: var(--accent); }
-    .moment-tab:nth-child(3) { transform: translateX(-12px); }
-    .moment-tab:nth-child(4) { transform: translateX(30px); }
-
-    .moment-tab strong {
-      font-size: .88rem;
-      text-transform: uppercase;
-      letter-spacing: .08em;
+    .trigger-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -50% 20%;
+      height: 240px;
+      background: radial-gradient(circle, rgba(223,255,56,.18), transparent 68%);
     }
+    .trigger-label { color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .trigger-copy { position: relative; z-index: 1; margin: 56px 0 42px; font-size: clamp(2.7rem, 5.6vw, 5.2rem); font-weight: 950; line-height: .88; letter-spacing: -.07em; text-transform: uppercase; }
+    .trigger-copy span { display: block; color: var(--accent); }
+    .trigger-signature { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 18px; text-transform: uppercase; font-weight: 900; letter-spacing: .06em; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 22px rgba(223,255,56,.85); }
 
-    .moment-tab small { color: var(--muted); }
+    section { padding: 92px 0; border-top: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: .55fr 1.45fr; gap: 48px; margin-bottom: 48px; }
+    h2 { margin: 0; font-size: clamp(2.15rem, 4.6vw, 4.6rem); line-height: .92; letter-spacing: -.06em; text-transform: uppercase; }
 
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 22px rgba(223,255,56,.85);
-    }
-
-    section {
-      padding: 92px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: .55fr 1.45fr;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(2.15rem, 4.6vw, 4.6rem);
-      line-height: .92;
-      letter-spacing: -.06em;
-      text-transform: uppercase;
-    }
-
-    .moments-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-
-    .moment-card {
-      min-height: 250px;
-      padding: 30px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: rgba(17,17,17,.42);
-    }
-
-    .moment-card strong {
-      display: block;
-      margin-bottom: 54px;
-      color: var(--accent);
-      font-size: .72rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .moment-card h3 {
-      margin: 0 0 12px;
-      font-size: 1.6rem;
-      letter-spacing: -.04em;
-      text-transform: uppercase;
-    }
-
+    .moments-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .moment-card { min-height: 250px; padding: 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(17,17,17,.42); transition: transform .2s ease, background .2s ease; }
+    .moment-card:hover { transform: translateY(-4px); background: rgba(223,255,56,.04); }
+    .moment-card strong { display: block; margin-bottom: 54px; color: var(--accent); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; }
+    .moment-card h3 { margin: 0 0 12px; font-size: 1.6rem; letter-spacing: -.04em; text-transform: uppercase; }
     .moment-card p { margin: 0; color: var(--muted); }
 
-    .product {
-      background: var(--surface);
-    }
+    .ritual { background: var(--surface); }
+    .ritual-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; }
+    .ritual-copy p { max-width: 620px; color: var(--muted); font-size: 1.08rem; }
+    .steps { border-top: 1px solid var(--line); }
+    .step { display: grid; grid-template-columns: 58px 1fr; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .step span { color: var(--accent); font-weight: 900; letter-spacing: .1em; }
+    .step h3 { margin: 0 0 5px; font-size: 1rem; text-transform: uppercase; letter-spacing: .04em; }
+    .step p { margin: 0; color: var(--muted); }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    .product-copy p {
-      color: var(--muted);
-      font-size: 1.08rem;
-    }
-
-    .product-copy .highlight {
-      margin-top: 28px;
-      padding: 22px 24px;
-      border-left: 4px solid var(--accent);
-      background: rgba(223,255,56,.055);
-      color: var(--text);
-      font-weight: 750;
-    }
-
-    .product-points {
-      display: grid;
-      border-top: 1px solid var(--line);
-    }
-
-    .point {
-      display: grid;
-      grid-template-columns: 58px 1fr;
-      gap: 18px;
-      padding: 22px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .point span {
-      color: var(--accent);
-      font-weight: 900;
-      letter-spacing: .1em;
-    }
-
-    .point h3 {
-      margin: 0 0 5px;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
-
+    .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .product-copy p { color: var(--muted); font-size: 1.08rem; }
+    .highlight { margin-top: 28px; padding: 22px 24px; border-left: 4px solid var(--accent); background: rgba(223,255,56,.055); color: var(--text) !important; font-weight: 750; }
+    .product-points { display: grid; border-top: 1px solid var(--line); }
+    .point { display: grid; grid-template-columns: 58px 1fr; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .point span { color: var(--accent); font-weight: 900; letter-spacing: .1em; }
+    .point h3 { margin: 0 0 5px; font-size: 1rem; text-transform: uppercase; letter-spacing: .04em; }
     .point p { margin: 0; color: var(--muted); }
 
-    .proof-strip {
-      padding: 22px 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: #0d0d0d;
-    }
+    .proof-strip { padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #0d0d0d; }
+    .proof-row { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .proof-row strong { color: var(--accent); text-transform: uppercase; letter-spacing: .09em; font-size: .82rem; }
+    .proof-row p { max-width: 780px; margin: 0; color: var(--muted); }
 
-    .proof-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
+    .validation-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 68px; align-items: start; }
+    .validation-copy p { color: var(--muted); font-size: 1.08rem; }
+    .checks { list-style: none; padding: 0; margin: 32px 0 0; border-top: 1px solid var(--line); }
+    .checks li { display: flex; gap: 13px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+    .checks li::before { content: "+"; color: var(--accent); font-weight: 900; }
 
-    .proof-row strong {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: .09em;
-      font-size: .82rem;
-    }
-
-    .proof-row p {
-      max-width: 780px;
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .validation-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 68px;
-      align-items: start;
-    }
-
-    .validation-copy p {
-      color: var(--muted);
-      font-size: 1.08rem;
-    }
-
-    .checks {
-      list-style: none;
-      padding: 0;
-      margin: 32px 0 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .checks li {
-      display: flex;
-      gap: 13px;
-      padding: 15px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .checks li::before {
-      content: "+";
-      color: var(--accent);
-      font-weight: 900;
-    }
-
-    form {
-      padding: 32px;
-      border: 1px solid #363636;
-      background: #0c0c0c;
-    }
-
-    .form-title {
-      margin: 0 0 6px;
-      font-size: 1.55rem;
-      text-transform: uppercase;
-      letter-spacing: -.035em;
-    }
-
+    form { padding: 32px; border: 1px solid #363636; background: #0c0c0c; }
+    .form-title { margin: 0 0 6px; font-size: 1.55rem; text-transform: uppercase; letter-spacing: -.035em; }
     .form-intro { margin: 0 0 26px; color: var(--muted); }
     .field { margin-bottom: 17px; }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      color: #d7d7d0;
-      font-size: .75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .095em;
-    }
-
-    input, select {
-      width: 100%;
-      height: 52px;
-      padding: 0 14px;
-      border: 1px solid #363636;
-      border-radius: 0;
-      outline: none;
-      color: var(--text);
-      background: var(--surface-2);
-    }
-
+    label { display: block; margin-bottom: 8px; color: #d7d7d0; font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .095em; }
+    input, select { width: 100%; height: 52px; padding: 0 14px; border: 1px solid #363636; border-radius: 0; outline: none; color: var(--text); background: var(--surface-2); }
     input:focus, select:focus { border-color: var(--accent); }
     select { appearance: none; }
+    .consent { display: grid; grid-template-columns: 20px 1fr; gap: 12px; align-items: start; margin: 5px 0 20px; color: var(--muted); font-size: .84rem; line-height: 1.45; }
+    .consent input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--accent); }
+    .consent label { margin: 0; color: inherit; font-size: inherit; font-weight: 500; letter-spacing: 0; text-transform: none; }
+    .form-note { display: none; margin-top: 16px; padding: 14px; border-left: 3px solid var(--accent); color: #d9d9d2; background: rgba(223,255,56,.06); font-size: .9rem; }
 
-    .consent {
-      display: grid;
-      grid-template-columns: 20px 1fr;
-      gap: 12px;
-      align-items: start;
-      margin: 5px 0 20px;
-      color: var(--muted);
-      font-size: .84rem;
-      line-height: 1.45;
-    }
+    .closing { text-align: center; background: var(--surface); }
+    .closing h2 { font-size: clamp(3.6rem, 9vw, 8.5rem); }
+    .closing h2 span { display: block; color: var(--accent); }
+    .closing p { margin: 26px 0 0; color: var(--muted); text-transform: uppercase; font-weight: 800; letter-spacing: .12em; }
 
-    .consent input {
-      width: 18px;
-      height: 18px;
-      margin: 2px 0 0;
-      accent-color: var(--accent);
-    }
-
-    .consent label {
-      margin: 0;
-      color: inherit;
-      font-size: inherit;
-      font-weight: 500;
-      letter-spacing: 0;
-      text-transform: none;
-    }
-
-    .form-note {
-      display: none;
-      margin-top: 16px;
-      padding: 14px;
-      border-left: 3px solid var(--accent);
-      color: #d9d9d2;
-      background: rgba(223,255,56,.06);
-      font-size: .9rem;
-    }
-
-    footer {
-      padding: 32px 0;
-      border-top: 1px solid var(--line);
-      color: #767670;
-      font-size: .78rem;
-    }
-
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
+    footer { padding: 32px 0; border-top: 1px solid var(--line); color: #767670; font-size: .78rem; }
+    .footer-row { display: flex; justify-content: space-between; gap: 22px; flex-wrap: wrap; }
 
     @media (max-width: 900px) {
-      .hero,
-      .section-head,
-      .product-grid,
-      .validation-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero { padding-top: 62px; gap: 16px; }
-      .hero-visual { min-height: 350px; }
+      .hero, .section-head, .ritual-grid, .product-grid, .validation-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 62px; gap: 28px; }
+      .hero-visual { min-height: 380px; }
       .ghost-word { transform: none; }
       .moments-grid { grid-template-columns: 1fr; }
       .moment-card { min-height: auto; }
@@ -489,18 +225,16 @@
     @media (max-width: 560px) {
       .container { width: min(calc(100% - 28px), var(--max)); }
       .status { display: none; }
-      h1 { font-size: clamp(3.2rem, 15vw, 4.8rem); }
+      h1 { font-size: clamp(3.8rem, 18vw, 5.5rem); }
       .hero { min-height: auto; padding: 50px 0 42px; }
       section { padding: 70px 0; }
-      .hero-visual { min-height: 310px; }
-      .moment-stack { width: 91%; }
-      .moment-tab { min-height: 64px; }
+      .hero-visual { min-height: 320px; }
+      .trigger-card { padding: 28px; }
       form { padding: 23px 18px; }
       .proof-row { align-items: flex-start; }
     }
   </style>
 </head>
-
 <body>
   <header>
     <div class="container nav">
@@ -512,17 +246,9 @@
   <main id="top">
     <div class="container hero">
       <div>
-        <div class="eyebrow">Chiclete funcional brasileiro em desenvolvimento</div>
-
-        <h1>
-          <span>Seu momento</span>
-          <em>TABS.</em>
-        </h1>
-
-        <p class="lead">
-          Um chiclete funcional portátil, pensado para momentos em que você precisa manter energia, atenção e ritmo sem interromper o que está fazendo.
-        </p>
-
+        <div class="eyebrow">Seu momento começa antes</div>
+        <h1><span>TABS.</span><em>Tá na hora.</em></h1>
+        <p class="lead">Existem momentos que pedem mais foco, clareza e presença. O TABS foi criado para marcar a entrada nesses momentos.</p>
         <div class="actions">
           <a class="button" href="#lista">Quero experimentar</a>
           <span class="microcopy">Produto em desenvolvimento · Pesquisa 18+</span>
@@ -531,27 +257,10 @@
 
       <div class="hero-visual" aria-hidden="true">
         <div class="ghost-word">TABS</div>
-
-        <div class="moment-stack">
-          <div class="moment-tab">
-            <strong>Antes da ranked</strong>
-            <span class="dot"></span>
-          </div>
-
-          <div class="moment-tab">
-            <strong>Durante a live</strong>
-            <small>modo performance</small>
-          </div>
-
-          <div class="moment-tab">
-            <strong>Antes da apresentação</strong>
-            <span class="dot"></span>
-          </div>
-
-          <div class="moment-tab">
-            <strong>Quando ainda falta muito</strong>
-            <small>seguir no ritmo</small>
-          </div>
+        <div class="trigger-card">
+          <div class="trigger-label">Quando importa</div>
+          <div class="trigger-copy">Tá na hora.<span>Vai de TABS.</span></div>
+          <div class="trigger-signature"><span>Modo performance</span><span class="dot"></span></div>
         </div>
       </div>
     </div>
@@ -559,71 +268,48 @@
     <section id="momentos">
       <div class="container">
         <div class="section-head">
-          <div class="kicker">Qual é o seu momento?</div>
+          <div class="kicker">Qual é o seu Momento TABS?</div>
           <h2>Não é sobre energia o tempo todo. É sobre estar pronto quando importa.</h2>
         </div>
 
         <div class="moments-grid">
-          <article class="moment-card">
-            <strong>01 · Games</strong>
-            <h3>Antes da ranked</h3>
-            <p>Para partidas, treinos e sessões competitivas em que atenção e tomada de decisão fazem diferença.</p>
-          </article>
-
-          <article class="moment-card">
-            <strong>02 · Criação</strong>
-            <h3>Durante a live</h3>
-            <p>Para criadores que precisam manter ritmo, presença e energia enquanto produzem, gravam ou transmitem.</p>
-          </article>
-
-          <article class="moment-card">
-            <strong>03 · Vida real</strong>
-            <h3>Quando precisa render</h3>
-            <p>Antes de uma apresentação, reunião, estudo ou projeto que ainda precisa sair do papel.</p>
-          </article>
+          <article class="moment-card"><strong>01 · Games</strong><h3>Antes da ranked</h3><p>Quando atenção, leitura de jogo e tomada de decisão precisam entrar juntas na partida.</p></article>
+          <article class="moment-card"><strong>02 · Estudo</strong><h3>Antes da prova</h3><p>Quando é hora de organizar a cabeça, sustentar o ritmo e encarar o que está na frente.</p></article>
+          <article class="moment-card"><strong>03 · Trabalho</strong><h3>Antes da reunião</h3><p>Quando presença, clareza e confiança precisam aparecer antes da primeira palavra.</p></article>
+          <article class="moment-card"><strong>04 · Comunicação</strong><h3>Antes da apresentação</h3><p>Quando você precisa entrar no ambiente pronto para mostrar o que sabe.</p></article>
+          <article class="moment-card"><strong>05 · Criação</strong><h3>Antes de criar</h3><p>Quando a ideia existe, mas ainda falta atravessar a distância até a execução.</p></article>
+          <article class="moment-card"><strong>06 · Jornada</strong><h3>Quando ainda falta muito</h3><p>Quando o desafio não acabou e manter o ritmo passa a ser parte da entrega.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="product">
+    <section class="ritual">
+      <div class="container ritual-grid">
+        <div class="ritual-copy">
+          <div class="kicker">O ritual TABS</div>
+          <h2>Uma pequena ação que marca uma mudança de estado.</h2>
+          <p>O TABS não quer ocupar todos os minutos do seu dia. Quer estar presente naquele instante em que você decide: agora começa.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><span>01</span><div><h3>O momento aparece</h3><p>Prova, ranked, reunião, apresentação, criação ou qualquer situação que pede desempenho.</p></div></div>
+          <div class="step"><span>02</span><div><h3>Você entra no modo TABS</h3><p>Um gesto simples, portátil e discreto que funciona como gatilho de preparação.</p></div></div>
+          <div class="step"><span>03</span><div><h3>Tá na hora</h3><p>O ritual termina onde a ação começa: vai de TABS.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
       <div class="container product-grid">
         <div class="product-copy">
           <div class="kicker">Primeiro produto</div>
           <h2>Energia e foco em um formato portátil.</h2>
-
-          <p>
-            O primeiro produto TABS está sendo desenvolvido como um chiclete funcional com cafeína e L-teanina, pensado para adultos que já recorrem ao café ou aos energéticos em momentos de desempenho.
-          </p>
-
-          <p class="highlight">
-            A fórmula, dosagem, sabor, embalagem e preço ainda serão validados antes do lançamento.
-          </p>
+          <p>O primeiro produto TABS está sendo desenvolvido como um chiclete funcional com cafeína e L-teanina, pensado para adultos que já recorrem ao café ou aos energéticos em momentos de desempenho.</p>
+          <p class="highlight">A fórmula, dosagem, sabor, embalagem e preço ainda serão validados antes do lançamento.</p>
         </div>
-
         <div class="product-points">
-          <div class="point">
-            <span>01</span>
-            <div>
-              <h3>Portátil</h3>
-              <p>Para levar no bolso, mochila ou setup.</p>
-            </div>
-          </div>
-
-          <div class="point">
-            <span>02</span>
-            <div>
-              <h3>Discreto</h3>
-              <p>Sem lata, sem preparo e sem pausar a tarefa.</p>
-            </div>
-          </div>
-
-          <div class="point">
-            <span>03</span>
-            <div>
-              <h3>Construído com o público</h3>
-              <p>O primeiro lote será moldado pelas respostas de quem realmente se vê usando o produto.</p>
-            </div>
-          </div>
+          <div class="point"><span>01</span><div><h3>Portátil</h3><p>Para levar no bolso, mochila ou setup.</p></div></div>
+          <div class="point"><span>02</span><div><h3>Discreto</h3><p>Sem lata, sem preparo e sem interromper o que você está fazendo.</p></div></div>
+          <div class="point"><span>03</span><div><h3>Construído com o público</h3><p>O primeiro lote será moldado pelas respostas de quem realmente se vê usando o produto.</p></div></div>
         </div>
       </div>
     </section>
@@ -631,9 +317,7 @@
     <div class="proof-strip">
       <div class="container proof-row">
         <strong>Categoria validada lá fora. Espaço aberto no Brasil.</strong>
-        <p>
-          Chicletes funcionais já conquistaram consumidores em outros mercados. O TABS nasce para desenvolver essa categoria com linguagem, preço e distribuição pensados para o público brasileiro.
-        </p>
+        <p>Chicletes funcionais já conquistaram consumidores em outros mercados. O TABS nasce para desenvolver essa categoria com linguagem, preço e distribuição pensados para o público brasileiro.</p>
       </div>
     </div>
 
@@ -641,12 +325,8 @@
       <div class="container validation-grid">
         <div class="validation-copy">
           <div class="kicker">Validação do primeiro lote</div>
-          <h2>Você compraria o TABS?</h2>
-
-          <p>
-            Sua resposta ajuda a definir público, ocasião de uso, preço e intenção real de compra antes da produção.
-          </p>
-
+          <h2>Qual seria o seu Momento TABS?</h2>
+          <p>Sua resposta ajuda a definir público, ocasião de uso, preço e intenção real de compra antes da produção.</p>
           <ul class="checks">
             <li>Participar da construção do produto</li>
             <li>Ser chamado para testes e validações</li>
@@ -657,97 +337,27 @@
         <form id="interest-form">
           <h3 class="form-title">Quero participar</h3>
           <p class="form-intro">Leva menos de um minuto.</p>
-
-          <div class="field">
-            <label for="name">Nome</label>
-            <input id="name" name="name" type="text" autocomplete="name" required />
-          </div>
-
-          <div class="field">
-            <label for="whatsapp">WhatsApp</label>
-            <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" required />
-          </div>
-
-          <div class="field">
-            <label for="city">Cidade</label>
-            <input id="city" name="city" type="text" autocomplete="address-level2" required />
-          </div>
-
-          <div class="field">
-            <label for="profile">Qual perfil mais combina com você?</label>
-            <select id="profile" name="profile" required>
-              <option value="" selected disabled>Selecione</option>
-              <option>Gamer ou jogador de e-sports</option>
-              <option>Streamer ou criador de conteúdo</option>
-              <option>Profissional ou empreendedor</option>
-              <option>Universitário</option>
-              <option>Outro</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="moment">Qual seria o seu Momento TABS?</label>
-            <select id="moment" name="moment" required>
-              <option value="" selected disabled>Selecione</option>
-              <option>Antes ou durante uma partida</option>
-              <option>Durante uma live ou criação de conteúdo</option>
-              <option>Antes de uma apresentação ou reunião</option>
-              <option>Durante o trabalho ou estudo</option>
-              <option>Em projetos pessoais</option>
-              <option>Outro momento</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="current_solution">O que você usa hoje nesses momentos?</label>
-            <select id="current_solution" name="current_solution" required>
-              <option value="" selected disabled>Selecione</option>
-              <option>Café</option>
-              <option>Energético</option>
-              <option>Pré-treino ou suplemento com cafeína</option>
-              <option>Não uso nada</option>
-              <option>Outra solução</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="trial_intent">Você compraria para experimentar?</label>
-            <select id="trial_intent" name="trial_intent" required>
-              <option value="" selected disabled>Selecione</option>
-              <option>Sim, compraria no lançamento</option>
-              <option>Talvez, dependendo do preço</option>
-              <option>Gostaria de testar antes</option>
-              <option>Não compraria</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="price">Embalagem com 12 unidades: por qual preço compraria?</label>
-            <select id="price" name="price" required>
-              <option value="" selected disabled>Selecione</option>
-              <option>R$ 19,90</option>
-              <option>R$ 24,90</option>
-              <option>R$ 29,90</option>
-              <option>R$ 34,90</option>
-              <option>Não compraria nessas faixas</option>
-            </select>
-          </div>
-
+          <div class="field"><label for="name">Nome</label><input id="name" name="name" type="text" autocomplete="name" required /></div>
+          <div class="field"><label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" required /></div>
+          <div class="field"><label for="city">Cidade</label><input id="city" name="city" type="text" autocomplete="address-level2" required /></div>
+          <div class="field"><label for="profile">Qual perfil mais combina com você?</label><select id="profile" name="profile" required><option value="" selected disabled>Selecione</option><option>Gamer ou jogador de e-sports</option><option>Streamer ou criador de conteúdo</option><option>Profissional ou empreendedor</option><option>Universitário</option><option>Outro</option></select></div>
+          <div class="field"><label for="moment">Qual seria o seu Momento TABS?</label><select id="moment" name="moment" required><option value="" selected disabled>Selecione</option><option>Antes ou durante uma partida</option><option>Durante uma live ou criação de conteúdo</option><option>Antes de uma apresentação ou reunião</option><option>Durante o trabalho ou estudo</option><option>Em projetos pessoais</option><option>Outro momento</option></select></div>
+          <div class="field"><label for="current_solution">O que você usa hoje nesses momentos?</label><select id="current_solution" name="current_solution" required><option value="" selected disabled>Selecione</option><option>Café</option><option>Energético</option><option>Pré-treino ou suplemento com cafeína</option><option>Não uso nada</option><option>Outra solução</option></select></div>
+          <div class="field"><label for="trial_intent">Você compraria para experimentar?</label><select id="trial_intent" name="trial_intent" required><option value="" selected disabled>Selecione</option><option>Sim, compraria no lançamento</option><option>Talvez, dependendo do preço</option><option>Gostaria de testar antes</option><option>Não compraria</option></select></div>
+          <div class="field"><label for="price">Embalagem com 12 unidades: por qual preço compraria?</label><select id="price" name="price" required><option value="" selected disabled>Selecione</option><option>R$ 19,90</option><option>R$ 24,90</option><option>R$ 29,90</option><option>R$ 34,90</option><option>Não compraria nessas faixas</option></select></div>
           <input id="source" type="hidden" name="source" value="direto" />
-
-          <div class="consent">
-            <input id="adult" name="adult" type="checkbox" value="Sim" required />
-            <label for="adult">Confirmo que tenho 18 anos ou mais.</label>
-          </div>
-
-          <div class="consent">
-            <input id="consent" name="consent" type="checkbox" value="Sim" required />
-            <label for="consent">Autorizo a Somos TABS a entrar em contato pelo WhatsApp sobre testes, validação e lançamento do produto.</label>
-          </div>
-
+          <div class="consent"><input id="adult" name="adult" type="checkbox" value="Sim" required /><label for="adult">Confirmo que tenho 18 anos ou mais.</label></div>
+          <div class="consent"><input id="consent" name="consent" type="checkbox" value="Sim" required /><label for="consent">Autorizo a Somos TABS a entrar em contato pelo WhatsApp sobre testes, validação e lançamento do produto.</label></div>
           <button class="button" id="submit-button" type="submit">Entrar na lista</button>
           <div class="form-note" id="form-note" role="status" aria-live="polite"></div>
         </form>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="container">
+        <h2>TABS.<span>Tá na hora.</span></h2>
+        <p>Vai de TABS.</p>
       </div>
     </section>
   </main>
@@ -761,41 +371,23 @@
 
   <script>
     const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxY7n1QqI2tRubu28Z0rP1N9lvfyB0fvK9EkJbP8JlL_UNYO5sPHRbKwUErulPayVh5Ww/exec';
-
     const form = document.querySelector('#interest-form');
     const note = document.querySelector('#form-note');
     const submitButton = document.querySelector('#submit-button');
     const sourceInput = document.querySelector('#source');
-
     const urlParams = new URLSearchParams(window.location.search);
-    const origem = (urlParams.get('origem') || 'direto')
-      .trim()
-      .toLowerCase()
-      .replace(/[^a-z0-9_-]/g, '')
-      .slice(0, 60);
-
+    const origem = (urlParams.get('origem') || 'direto').trim().toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 60);
     sourceInput.value = origem || 'direto';
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
-
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
+      if (!form.checkValidity()) { form.reportValidity(); return; }
       const originalText = submitButton.textContent;
       submitButton.disabled = true;
       submitButton.textContent = 'Enviando...';
       note.style.display = 'none';
-
       try {
-        await fetch(FORM_ENDPOINT, {
-          method: 'POST',
-          mode: 'no-cors',
-          body: new FormData(form)
-        });
-
+        await fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: new FormData(form) });
         form.reset();
         sourceInput.value = origem || 'direto';
         note.textContent = 'Cadastro recebido. Quando o primeiro lote estiver mais perto, a gente entra em contato.';
