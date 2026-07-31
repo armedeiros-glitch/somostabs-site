@@ -128,9 +128,22 @@
     .closing p{margin:26px 0 0;color:var(--muted);text-transform:uppercase;font-weight:800;letter-spacing:.12em}
     footer{padding:32px 0;border-top:1px solid var(--line);color:#767670;font-size:.78rem}
     .footer-row{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
+
+    /* Escala tipográfica equilibrada */
+    h1{font-size:clamp(2.8rem,5.2vw,5rem);line-height:.9}
+    h2{font-size:clamp(1.75rem,3.2vw,3.1rem);line-height:1}
+    .gum-badge strong{font-size:clamp(1.65rem,3vw,2.35rem)}
+    .moment-line strong{font-size:clamp(.9rem,1.15vw,1.05rem)}
+    .moment-card h3{font-size:1.25rem}
+    .category-row h3{font-size:.98rem}
+    .step h3,.point h3{font-size:.94rem}
+    .lab-panel h3{font-size:1.45rem;line-height:1.08}
+    .form-title{font-size:1.25rem}
+    .closing h2{font-size:clamp(2.5rem,5vw,4.8rem)}
+
     @media(max-width:980px){.moments-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:900px){.hero,.section-head,.category-grid,.ritual-grid,.product-grid,.ecosystem-grid,.validation-grid{grid-template-columns:1fr}.hero{padding-top:62px;gap:28px}.hero-visual{min-height:430px}.ghost-word{transform:none}.category-row{grid-template-columns:90px 1fr}}
-    @media(max-width:560px){.container{width:min(calc(100% - 28px),var(--max))}.status{display:none}h1{font-size:clamp(3rem,14.5vw,4.4rem)}.hero{min-height:auto;padding:50px 0 42px}section{padding:70px 0}.hero-visual{min-height:400px}.device-card{padding:22px}.moments-grid{grid-template-columns:1fr}.moment-card{min-height:auto}.moment-card strong{margin-bottom:34px}.category-row{grid-template-columns:1fr;gap:8px}form{padding:23px 18px}.proof-row{align-items:flex-start}}
+    @media(max-width:560px){.container{width:min(calc(100% - 28px),var(--max))}.status{display:none}h1{font-size:clamp(2.45rem,11.5vw,3.55rem)}h2{font-size:clamp(1.65rem,8.5vw,2.35rem)}.closing h2{font-size:clamp(2.35rem,11vw,3.6rem)}.hero{min-height:auto;padding:50px 0 42px}section{padding:70px 0}.hero-visual{min-height:400px}.device-card{padding:22px}.moments-grid{grid-template-columns:1fr}.moment-card{min-height:auto}.moment-card strong{margin-bottom:34px}.category-row{grid-template-columns:1fr;gap:8px}form{padding:23px 18px}.proof-row{align-items:flex-start}}
   </style>
 </head>
 <body>
