@@ -1,6 +1,6 @@
 # TABS Site V3
 
-Landing page da **TABS Smart Gum**, criada para validar a categoria, os momentos de uso e a intenção de compra antes do primeiro lote.
+Landing page da **TABS Smart Gum**, criada para validar os momentos de uso e a intenção de compra antes do primeiro lote.
 
 ## Arquivos
 
@@ -12,7 +12,7 @@ Landing page da **TABS Smart Gum**, criada para validar a categoria, os momentos
 
 ## Posicionamento atual
 
-- Categoria principal: **Smart Gum**
+- Produto: **TABS Smart Gum**
 - Proposta: **energia com foco para os momentos que importam**
 - Ritual: **Abra. Mastigue. Entre no momento.**
 - Públicos de validação: games e e-sports, universitários, profissionais, empreendedores e criadores
@@ -30,11 +30,13 @@ Landing page da **TABS Smart Gum**, criada para validar a categoria, os momentos
 
 ## Principais mudanças da V3
 
-- Smart Gum passa a ser a categoria central da página
-- Hero com proposta de valor mais direta
+- Smart Gum inserido como nome do produto
+- Hero com proposta de valor mais direta e título reduzido
 - Comunicação organizada por momentos de alta exigência
 - Seção educativa explicando o que é Smart Gum
 - Ritual simplificado em três passos
 - Conexão com o NaSCer 2026 e o ecossistema de inovação de Joinville
 - Formulário atualizado para captar público de games, estudo, trabalho e criação
 - Layout responsivo preservado e interface visual mais próxima de tecnologia e performance
+
+Último disparo de publicação: 31/07/2026 às 08:36 (BRT).
