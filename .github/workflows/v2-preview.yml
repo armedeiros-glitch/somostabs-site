@@ -1,0 +1,49 @@
+name: Publicar preview V2
+
+on:
+  push:
+    branches:
+      - v2-cinematic
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: v2-preview
+  cancel-in-progress: true
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm install --no-audit --no-fund
+
+      - name: Gerar build estático
+        run: npm run build -- --base=./
+
+      - name: Publicar na branch de preview
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd dist
+          touch .nojekyll
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Atualiza preview V2"
+          git branch -M v2-preview-static
+          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push --force origin v2-preview-static
