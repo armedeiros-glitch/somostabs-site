@@ -1,14 +1,25 @@
-# TABS Site V3
+# TABS Site — V2 Cinematic Prototype
 
-Landing page da **TABS Smart Gum**, criada para validar os momentos de uso e a intenção de compra antes do primeiro lote.
+Protótipo isolado do hero cinematográfico da **TABS Smart Gum**, desenvolvido na branch `v2-cinematic`. A versão estável anterior continua preservada na branch `main`.
 
-## Arquivos
+## Stack
 
-- `index.html`
-- `styles.css`
-- `app.js`
+- React + Vite
+- React Three Fiber + Three.js
+- GSAP + ScrollTrigger
 
-> A versão publicada atualmente concentra HTML, CSS e JavaScript no `index.html`. Os arquivos separados permanecem no repositório como referência da versão anterior.
+## Executar localmente
+
+```bash
+npm install
+npm run dev
+```
+
+Para validar o bundle de produção:
+
+```bash
+npm run build
+```
 
 ## Posicionamento atual
 
@@ -24,19 +35,16 @@ Landing page da **TABS Smart Gum**, criada para validar os momentos de uso e a i
 - Fundo preto
 - Verde-lima principal `#dfff38`
 - Branco e cinzas da identidade existente
-- Endpoint atual do formulário no Google Apps Script
-- Rastreamento pelo parâmetro `?origem=`
-- Formulário de validação e confirmação de maioridade
+- Posicionamento `TABS. Tá na hora.`
+- Versão estável completa na branch `main`
 
-## Principais mudanças da V3
+## Escopo do protótipo
 
-- Smart Gum inserido como nome do produto
-- Hero com proposta de valor mais direta e título reduzido
-- Comunicação organizada por momentos de alta exigência
-- Seção educativa explicando o que é Smart Gum
-- Ritual simplificado em três passos
-- Conexão com o NaSCer 2026 e o ecossistema de inovação de Joinville
-- Formulário atualizado para captar público de games, estudo, trabalho e criação
-- Layout responsivo preservado e interface visual mais próxima de tecnologia e performance
+- Hero em tela cheia com narrativa controlada pelo scroll
+- Smart Case provisória construída apenas com geometrias 3D
+- Tampa animada, aproximação de câmera e resposta suave ao mouse
+- Exterior preto fosco, interior verde-lima e exatamente quatro gums
+- Fallback em CSS para telas pequenas, movimento reduzido ou hardware limitado
+- Nenhuma seção adicional do site foi construída nesta etapa
 
-Último disparo de publicação: 31/07/2026 às 08:36 (BRT).
+Os antigos `styles.css` e `app.js` permanecem no repositório apenas como referência histórica e não são carregados pela aplicação React.
