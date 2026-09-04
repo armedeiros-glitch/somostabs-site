@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded',()=>{
-  const VERSION='20260904-1239';
+  const VERSION='20260904-1242';
   const pack30=`/site-assets/pack30.webp?v=${VERSION}`;
   const pack8=`/site-assets/pack8.webp?v=${VERSION}`;
 
