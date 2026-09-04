@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded',()=>{
-  const VERSION='20260904-1245';
-  const pack30=`/site-assets/pack30.webp?v=${VERSION}`;
-  const pack8=`/site-assets/pack8.webp?v=${VERSION}`;
+  const pack30='https://res.cloudinary.com/vxabipvl/image/upload/v1788537420/alt-tabs-pouch-original.png';
+  const pack8='https://res.cloudinary.com/vxabipvl/image/upload/v1788537434/alt-tabs-box-original.png';
 
   const style=document.createElement('style');
   style.textContent=`
@@ -32,13 +31,13 @@ document.addEventListener('DOMContentLoaded',()=>{
   if(brand){brand.innerHTML='<span class="tabs-logo" aria-label="ALT TABS, sua mente no modo certo"><span class="tabs-logo-alt">ALT</span><span class="tabs-logo-speed">≡</span><span class="tabs-logo-tabs">TABS</span><small>Sua mente no modo certo.</small></span>';}
 
   const hero=document.querySelector('.hero-visual');
-  if(hero){hero.innerHTML=`<div class="hero-product-card"><img src="${pack30}" alt="ALT TABS Smart Gum, conceito de embalagem pouch 30 gums" width="520" height="650" decoding="async" fetchpriority="high"><div class="hero-product-tag">Conceito de embalagem</div></div>`;}
+  if(hero){hero.innerHTML=`<div class="hero-product-card"><img src="${pack30}" alt="ALT TABS Smart Gum, conceito de embalagem pouch 30 gums" width="1122" height="1402" decoding="async" fetchpriority="high"><div class="hero-product-tag">Conceito de embalagem</div></div>`;}
 
   const moments=document.querySelector('#momentos');
   if(moments && !document.querySelector('.pack-showcase')){
     const section=document.createElement('section');
     section.className='pack-showcase';
-    section.innerHTML=`<div class="container"><div class="pack-showcase-head"><div class="kicker">Identidade em desenvolvimento</div><h2>Smart Gum com cara de ALT TABS.</h2><p>Do pouch para a caixa, a linguagem visual segue o mesmo território: performance, foco, tecnologia e presença. <strong style="color:#fff">Sua mente no modo certo.</strong></p></div><div class="pack-grid"><div class="pack-card"><img src="${pack30}" alt="ALT TABS pouch, conceito 30 gums" width="520" height="650" loading="lazy"><span>Pouch · conceito 30 gums</span></div><div class="pack-card"><img src="${pack8}" alt="ALT TABS box, conceito 8 gums" width="520" height="650" loading="lazy"><span>Box · conceito 8 gums</span></div></div></div>`;
+    section.innerHTML=`<div class="container"><div class="pack-showcase-head"><div class="kicker">Identidade em desenvolvimento</div><h2>Smart Gum com cara de ALT TABS.</h2><p>Do pouch para a caixa, a linguagem visual segue o mesmo território: performance, foco, tecnologia e presença. <strong style="color:#fff">Sua mente no modo certo.</strong></p></div><div class="pack-grid"><div class="pack-card"><img src="${pack30}" alt="ALT TABS pouch, conceito 30 gums" width="1122" height="1402" loading="lazy"><span>Pouch · conceito 30 gums</span></div><div class="pack-card"><img src="${pack8}" alt="ALT TABS box, conceito 8 gums" width="1122" height="1402" loading="lazy"><span>Box · conceito 8 gums</span></div></div></div>`;
     moments.parentNode.insertBefore(section,moments);
   }
 
